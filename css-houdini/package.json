@@ -4,10 +4,9 @@
   "version": "1.0.0",
   "description": "CSS Community Dev Logo CSS Houdini version",
   "main": "dist/csscommunitydev.js",
-  "module": "dist/csscommunitydev.module.js",
-  "unpkg": "dist/csscommunitydev.umd.js",
   "scripts": {
-    "build": "rimraf dist && microbundle --no-sourcemap",
+    "prebuild": "rimraf dist",
+    "build": "microbundle --entry src/index.js --output dist/csscommunitydev.js --no-pkg-main --format modern --no-sourcemap",
     "prepublish": "npm run build",
     "test": "npm run test:copy && npm run test:server",
     "test:copy": "cp -fv ./src/index.js ./test/csscommunitydev.js",
