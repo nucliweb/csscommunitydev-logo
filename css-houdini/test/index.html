@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Community Dev Logo CSS Houdini version</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="css-houdini csscommunitydev"></div>
+    <script>
+      ;(async function() {
+        if (CSS['paintWorklet'] === undefined)
+          await import('https://unpkg.com/css-paint-polyfill')
+
+        CSS.paintWorklet.addModule('./csscommunitydev.js')
+      })()
+    </script>
+  </body>
+</html>
